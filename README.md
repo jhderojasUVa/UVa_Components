@@ -11,7 +11,7 @@ This is based on HTML, SASS & JS. There's no suspicious way to have some React o
 Here you can find the UX documentation and the UI component made thanks the UX process and the structure of every directory will depend of the component itself.
 
 ## Usual directory structure
-
+```
 component_name/
   scss/
     component_name.scss (SCSS of the component)
@@ -27,7 +27,7 @@ component_name/
   readme.md (documentation of the component)
 js/
   sass.js (needed if you try to run scss directly without compiling it)
-
+```
 ## Example of the component
 
 On the index.html file is a running example of the component. This file can be related libraries like Bootstrap, Foundation or JQuery if needed in order to run the example so, all this "linked" libraries must be linked outside (CDN, Google Hosted Libraries...).
