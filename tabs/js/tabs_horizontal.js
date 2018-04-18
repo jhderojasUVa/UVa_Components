@@ -84,21 +84,3 @@ function handleGesture() {
 Create_Events_Tab('identificador123');
 Create_Events_Tab('identificador1234');
 Create_Events_Tab('identificador12345');
-
-/*$(function(){
-  $(".identificador123 ul").swiperight(function(){
-    alert("swipe right");
-  });
-  $(".identificador123 ul").swipeleft(function(){
-    alert("swipe left");
-  });
-});*/
-
-/*$(function(){
-  $(".identificador123 ul").on("swiperight", function(event){
-    alert("swipe right");
-  });
-  $(".identificador123 ul").on("swipeleft", function(event){
-    alert("swipe right");
-  });
-});*/
