@@ -24,6 +24,8 @@ It's not the perfect behavior because we change the typical tab behavior and may
 
 On a mobile it show very different. The menu will be on the upper side of the element and if the menu is bigger than the width size of the screen the elements will be outside but you can swipe the menu in order to find what you need.
 
+## UI behavior
+
 ## SCSS
 
 We have two files depending of the component.
