@@ -10,6 +10,8 @@ This is based on HTML, SASS & JS. There's no suspicious way to have some React o
 
 Here you can find the UX documentation and the UI component made thanks the UX process and the structure of every directory will depend of the component itself.
 
+Some documentation can be on spanish (sorry, we are from Spain) and we try to create the most on english but if you find something on spanish... sorry (for example the documentation inside the functions). It's the language we comunicate inside our work so for easy development somethings can be on spanish.
+
 ## Usual directory structure
 ```
 component_name/
@@ -39,3 +41,5 @@ Sometimes you will see components that his SCSS begins with an underscore. That 
 ## Components without the structure
 
 You can find components that don't use the usual directory structure. That component is a basic component and maybe don't need an example in order to run.
+
+Basic components usually are imported on secondary in order to run.
