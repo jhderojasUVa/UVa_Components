@@ -1,0 +1,35 @@
+//
+//  Definición de parrafos
+//
+//  v0.1
+//
+
+@import '../fonts/fonts';
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+h3 {
+
+}
+
+h4 {
+
+}
+
+h5 {
+
+}
+
+@mixin paragraph_item() {
+  // Crea cada elemento del parrafo
+}
+
+@mixin paragraph() {
+  // Crea todos los parrafos con todo su contenido
+}

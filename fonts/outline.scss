@@ -1,0 +1,21 @@
+//
+//  Definición de outline
+//
+//  v0.1
+//
+
+@mixin outline ($nombre-color, $color) {
+  // Crea un estilo con una linea de un color fuera y fondo blaco
+  // $color: color de la linea
+  // $nombre-color: nombre del color del estilo
+  .outline_#{$nombre-color} {
+    -webkit-text-stroke: 1px $color;
+    //color: rgba(255, 255, 255, 0); // Color letras
+    color: white;
+    text-shadow:
+       -1px -1px 0 $color,
+        1px -1px 0 $color,
+        -1px 1px 0 $color,
+         1px 1px 0 $color;
+  }
+}

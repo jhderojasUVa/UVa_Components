@@ -1,0 +1,76 @@
+//
+//  Definición de Tabs
+//
+//  v0.1
+//
+
+// Metodo de uso de los tabs
+
+// Para crear estilos del tab segun el color
+// @include tab("azul", "blanco", "#005d8c", "#fff");
+
+// Uso de los estilos en los botones
+// Normal
+// <a class="nav-link tab azul_blanco" href="#">Texto del boton</a>
+// Active
+// <a class="nav-link tab azul_blanco active" href="#">Texto del boton activo</a>
+// Disabled
+// <a class="nav-link tab azul_blanco disabled" href="#">Texto del boton disabled</a>
+
+%tabs-base {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@mixin tabs ($text-color, $bg-color, $encima: false, $enabled: true, $active: false) {
+  // $text-color: color del texto
+  // $bg-color: color de fondo
+  // $encima: hace el :hover (true o false)
+  // $enabled: si esta activo o no (true o false)
+  // active: si estas en el o no (true o false)
+  text-align: left;
+  text-transform: uppercase;
+  @if ($encima == false and $enabled == true) {
+    background-color: $bg-color;
+    color: lighten($text-color, 10);
+  } @else if ($encima == true and $enabled == true) {
+    background-color: $text-color;
+    color: $bg-color;
+  } @else if ($enabled == false) {
+    color: lighten($text-color, 10);
+  } @else if ($encima == true and $enabled == false) {
+    background-color: $bg-color;
+  }
+  @if ($active == true) {
+    background-color: $bg-color;
+    border-bottom: 2px solid $text-color;
+    color: lighten($text-color, 50%);
+  }
+}
+
+@mixin tab ($nombre-color, $nombre-fondo, $text-color, $bg-color) {
+  // Genera todo los tabs
+  // $nombre-color: el nombre que tendra el CSS del color
+  // nombre-fondo: el nombre que tendra el CSS para el fondo
+  // $text-color: color del texto
+  // $bg-color: color de fondo
+  .tab.#{$nombre-color}_#{$nombre-fondo} {
+    @include tabs($text-color, $bg-color, false, true, false);
+  }
+
+  .tab.#{$nombre-color}_#{$nombre-fondo}:hover {
+    @include tabs($text-color, $bg-color, true, true, false);
+  }
+
+  .tab.#{$nombre-color}_#{$nombre-fondo}.disabled {
+    @include tabs($text-color, $bg-color, false, false, false);
+  }
+
+  .tab.#{$nombre-color}_#{$nombre-fondo}.active {
+    @include tabs($text-color, $bg-color, false, false, true);
+  }
+
+  .tab.#{$nombre-color}_#{$nombre-fondo}.active:hover {
+    @include tabs($text-color, $bg-color, true, false, true);
+  }
+}

@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css?family=Alegreya:300, 400, 500|Arvo:300, 400, 500|IM+Fell+English+SC:300, 400, 500|Lato:300, 400, 500|Libre+Franklin:300, 400, 500|Montserrat:300, 400, 500|Open+Sans:300, 400, 500|Raleway:300, 400, 500");
+
+// Definiciones estandar a extender
+
+%font-libre-franklin {
+  font-family: "Libre Franklin", sans-serif;
+}
+
+%font-open-sans {
+  font-family: "Open Sans", sans-serif;
+}
+
+%font-arvo {
+  font-family: "Arvo", serif;
+}
+
+%font-lato {
+  font-family: "Lato", sans-serif;
+}
+
+%font-montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+%font-relaway {
+  font-family: "Raleway", sans-serif;
+}
+
+%font-feeling-english {
+  font-family: "IM Fell English", serif;
+}
+
+// h1-h5, p, li
+
+h1 {
+  @extend %font-libre-franklin;
+  color: rgba(55, 55, 55, 0.9);
+  font-weight: 300;
+  font-size: 2.8em;
+  line-height: 1.0em;
+  margin-bottom: .1em;
+  margin-top: .1em;
+  .titulos_cortos {
+    @extend %font-montserrat;
+    font-weight: 400;
+  }
+}
+
+h2 {
+  @extend %font-libre-franklin;
+  color: rgba(55, 55, 55, 0.8);
+  font-weight: 300;
+  font-size: 2.5em;
+  line-height: 1.0em;
+  margin-top: .2em;
+  margin-bottom: .0em;
+}
+
+h3 {
+  @extend %font-libre-franklin;
+  color: rgba(55, 55, 55, 0.8);
+  font-weight: 300;
+  font-size: 1.3em;
+  line-height: 1.4em;
+  margin-top: .5em;
+  margin-bottom: .5em;
+}
+
+h4 {
+  @extend %font-open-sans;
+  color: rgba(55, 55, 55, 0.8);
+  font-weight: 400;
+  font-size: .8em;
+  line-height: 1.4em;
+  margin-top: .5em;
+  margin-bottom: .5em;
+}
+
+h5 {
+  @extend %font-open-sans;
+  font-weight: 400;
+  color: rgba(55, 55, 55, 0.8);
+  font-size: .65em;
+  line-height: 1.4em;
+  margin-top: .5em;
+  margin-bottom: .5em;
+  .arvo {
+    @extend %font-arvo;
+  }
+  .opensans {
+      @extend %font-open-sans;
+  }
+}
+
+p, li {
+  @extend %font-lato;
+  font-weight: 300;
+  font-size: 1em;
+  line-height: 1.4em;
+  margin-top: .5em;
+  margin-bottom: .5em;
+  color: rgba(55, 55, 55, 0.8);
+  .pie_foto {
+      @extend %font-open-sans;
+      font-size: .65em;
+      font-weight: 400;
+      color: #373737;
+      line-height: 1.4em;
+      margin-top: .5em;
+      margin-bottom: .5em;
+  }
+}
+
+blockquote {
+  @extend %font-relaway;
+  font-size: 2em;
+  line-height: 1.0;
+  color: rgba(227, 5, 74, 0.75);
+}
+
+.script {
+  @extend %font-feeling-english;
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    //@extend %font-libre-franklin;
+    color: rgba(55, 55, 55, 0.9);
+    font-weight: 300;
+    font-size: 1.8em;
+    line-height: 1.0em;
+    margin-bottom: 0.1em;
+    margin-top: 0.1em;
+  }
+  h2 {
+    //@extend %font-libre-franklin;
+    color: rgba(55, 55, 55, 0.8);
+    font-weight: 300;
+    font-size: 1.4em;
+    line-height: 1.0em;
+    margin-top: .5em;
+    margin-bottom: .5em;
+  }
+  h3 {
+    font-size: 1.2em;
+    line-height: 1.4em;
+    margin-top: .9em;
+    margin-bottom: .5em;
+  }
+  h4 {
+    font-size: 1em;
+    line-height: 1.4em;
+    margin-top: .5em;
+    margin-bottom: .5em;
+  }
+  h5 {
+    font-size: .8em;
+    line-height: 1.4em;
+    margin-top: .5em;
+    margin-bottom: .5em;
+  }
+  h6 {
+    font-size: .65em;
+    line-height: 1.4em;
+    margin-top: .5em;
+    margin-bottom: .5em;
+  }
+  p, li {
+    //@extend %font-lato;
+    font-weight: 300;
+    font-size: 1.6em;
+    line-height: 1.2em;
+    margin-top: .6em;
+    margin-bottom: 1.5em;
+  }
+  .footer p {
+    //@extend %font-lato;
+    font-weight: 300;
+    font-size: 1em;
+    line-height: 1.4em;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    color: rgba(55, 55, 55, 0.8);
+  }
+  blockquote {
+    font-size: 2em;
+    line-height: 1.0;
+  }
+}
+
+h2 p {
+    font-size: 1.4em;
+    line-height: 1.25em;
+}
+h2 p {
+    margin: 0;
+}
+
+// Mixins y demas familia
+
+@mixin font_weights() {
+  // Crea las "gorduras" de las letras del 100 al 800
+  $i: 100;
+  $max: 800;
+  @while $i < $max {
+    .font_weight_#{$i} {
+      font-weight: $i;
+      $i: $i + 100;
+    }
+  }
+  // Los de maxima gordura
+  .font_weight_bold {
+    font-weight: bold;
+  }
+  .font_weight_bolder {
+    font-weight: bolder;
+  }
+}
+
+@mixin create_text_color($color-name, $color) {
+  // Crea el estilo del color del text
+  .text-color_#{$color-name} {
+    color: $color;
+  }
+}
+
+@mixin create_background($color-name, $color) {
+  // Crea el color de fondo
+  .fondo_#{$color-name} {
+    background-color: $color;
+  }
+}
+
+@mixin create_margins($pixels_top_bottom, $pixels_left_right) {
+  // Crea los cuatro margenes con los tamaños indicados automaticamente
+  .margin_bottom_#{$pixels_top_bottom} {
+    margin-bottom: $pixels_top_bottom;
+  }
+  .margin_top_#{$pixels_top_bottom} {
+    margin-top: $pixels_top_bottom;
+  }
+  .margin_left_#{$pixels_left_right} {
+    margin-left: $pixels_left_right;
+  }
+  .margin_right_#{$pixels_left_right} {
+    margin-right: $pixels_left_right;
+  }
+}
+
+@mixin create_paddings($pixels_top_bottom, $pixels_left_right) {
+  // Crea los cuatro paddings con los tamaños indicados automaticamente
+  .padding_bottom_#{$pixels_top_bottom} {
+    padding-bottom: $pixels_top_bottom;
+  }
+  .padding_top_#{$pixels_top_bottom} {
+    padding-top: $pixels_top_bottom;
+  }
+  .padding_left_#{$pixels_left_right} {
+    padding-left: $pixels_left_right;
+  }
+  .padding_right_#{$pixels_left_right} {
+    padding-right: $pixels_left_right;
+  }
+}
+
+@mixin create_border($nombre-color, $color, $pixel) {
+  // Crea el borde total (completo) y el borde superior e inferior automaticamente
+  .border_total_#{$nombre-color}_#{$pixel} {
+    border: $pixel+px solid $color;
+  }
+  .border_top_#{$nombre-color}_#{$pixel} {
+    border-top: $pixel+px solid $color;
+  }
+  .border_bottom_#{$nombre-color}_#{$pixel} {
+    border-bottom: $pixel+px solid $color;
+  }
+}
+
+@mixin create_shadow_box($pixel, $color) {
+  // Crea las sombras
+  .sombra_box_#{$pixel} {
+    box-shadow: 0px 3px $pixel+px $color;
+    padding: 3px;
+  }
+}

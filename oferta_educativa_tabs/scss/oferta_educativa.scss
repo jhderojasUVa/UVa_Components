@@ -1,0 +1,20 @@
+// importacos
+@import '../../fonts/fonts';
+@import '../../colors/_colors';
+@import '../../buttons/_button';
+@import '/httdocs/components/tabs/_tabs';
+
+// colores
+@include crea_color("azul", $azul);
+@include crea_color("negro", $negro);
+
+// Botonacos
+@include buttons("azul", "blanco", $azul, $blanco);
+@include tab("azul", "blanco", $azul, $blanco);
+
+ul {
+  column-count: 2;
+  li {
+    list-style-type: none;
+  }
+}

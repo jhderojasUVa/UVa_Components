@@ -1,0 +1,33 @@
+//
+//  Definición de jumbo
+//  Mas conocido como un elemento que se divide en dos
+//  y dentro, segun especficacion tiene texto y boton a la derecha
+//  y una foto o imagen en la zona izquierda
+//
+//  v0.1
+//
+
+.jumbo {
+  border-radius: 4px;
+  height: 212px;
+  h1 {
+    color: white;
+    font-size: 1.5em;
+    margin-top: 0.8em;
+  }
+  p {
+    color: #323433;
+    font-size: 0.8em;
+  }
+  button {
+    background: white;
+    color: #43ac9d;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 4px;
+    border: none;
+    float: right;
+    padding: 0 2em;
+    margin-top: 0.5em;
+  }
+}

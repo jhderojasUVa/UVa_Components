@@ -1,0 +1,66 @@
+//
+//  Definición de los tabs horizontales
+//
+//  v0.1
+//
+
+@mixin create_tab_horizontal($alineacion: left) {
+  // Crea el tab horizontal y, por ahora, todo lo que se que hace falta
+  // $alineacion: como se alinean los botones, por defecto "left" || [right] [center]
+  .tab_horizontal_#{$alineacion} {
+    margin-top: 1em;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    ul {
+      height: 50px;
+
+      background-color: white;
+      position: relative;
+      margin: 0;
+      padding: 0;
+      text-align: #{$alineacion};
+      a {
+        color: #d0d0d0;
+          li.active {
+            color: #a0a0a0;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+      li {
+        padding: 0.8em 1.3em;
+        margin: 0;
+        display: inline-block;
+        list-style-type: none;
+        border-left: 1px solid #d0d0d0;
+        border-top: 1px solid #d0d0d0;
+        border-right: 1px solid #d0d0d0;
+        text-align: center;
+        text-transform: uppercase;
+        color: #797979;
+        border-radius: 4px 4px 0 0;
+        &.active {
+          border-left: 1px solid #a0a0a0;
+          border-top: 1px solid #a0a0a0;
+          border-right: 1px solid #a0a0a0;
+          color: #a0a0a0;
+          a {
+            color: #a0a0a0;
+          }
+        }
+      }
+    }
+    .contenido {
+      border: 1px solid #d0d0d0;
+      padding: 0.5em;
+      & > div {
+        display: none;
+        &.active {
+          display: block;
+        }
+      }
+    }
+  }
+}

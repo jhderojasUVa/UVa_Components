@@ -1,0 +1,65 @@
+/*
+  Definición de colores segun su A
+
+  v0.1
+*/
+
+/* ==== Negro ==== */
+// AAA
+$negro: rgba(18, 18, 18, 1);
+
+$negro_10: lighthen($negro, 10%);
+$negro_20: lighthen($negro, 20%);
+$negro_30: lighthen($negro, 30%);
+$negro_40: lighthen($negro, 40%);
+
+// AA
+$negro_50: lighthen($negro, 50%);
+
+// A
+$negro_60: lighthen($negro, 60%);
+$negro_70: lighthen($negro, 70%);
+$negro_80: lighthen($negro, 80%);
+$negro_90: lighthen($negro, 90%);
+
+/* ==== Azul ==== */
+// AAA
+$azul: rgba(0, 70, 130, 1);
+$azul_10: lighthen($azul, 10%);
+$azul_20: lighthen($azul, 20%);
+
+// AA
+$azul_30: lighthen($azul, 30%);
+
+
+// A
+$azul_40: lighthen($azul, 40%);
+$azul_50: lighthen($azul, 50%);
+$azul_60: lighthen($azul, 60%);
+$azul_70: lighthen($azul, 70%);
+$azul_80: lighthen($azul, 80%);
+$azul_90: lighthen($azul, 90%);
+
+/* ==== Blanco ==== */
+// AAA
+$blanco: white;
+
+/* === Generico === */
+@mixin crea_color($nombre-color, $color) {
+  // Crea todos los colores
+  // $nombre-color: el nombre del color para los CSS
+  // $color: el color en si
+  .#{$nombre-color} {
+    color: $color;
+  }
+  $begin: 10;
+  $end: 100;
+  @if $color != 'white' { // Si es blanco vamos jodidos
+    @while $begin < $end {
+      .#{$nombre-color}_#{$begin} {
+        color: lighten($color, $begin);
+      }
+      $begin: $begin + 10;
+    }
+  }
+}

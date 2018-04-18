@@ -1,0 +1,73 @@
+//
+//  Definición de botones
+//
+//  v0.1
+//
+
+// Metodo de uso de los botones
+
+// Para crear estilos de boton segun el color
+// @include buttons("azul", "blanco", "#005d8c", "#fff");
+
+// Uso de los estilos en los botones
+// Normal
+// <button class="btn azul_blanco">Texto del boton</button>
+// Active
+// <button class="btn azul_blanco active">Texto del boton activo</button>
+// Disabled
+// <button class="btn azul_blanco disabled">Texto del boton disabled</button>
+
+%button-base {
+  font-size: 1em;
+  padding: 0.1em 2.3em;
+  margin: 0.2em;
+}
+
+@mixin button ($text-color, $bg-color, $encima: false, $enabled: true) {
+  // $text-color: color del texto, principal
+  // bg-color: color del fondo, secundario
+  // encima: true o false y es hover o no -por defecto false-
+  // enabled: si esta activo o no - por defecto si-
+  @extend %button-base;
+  border-radius: 0;
+  border: 1px solid $text-color;
+  @if ($encima == false and $enabled == true) {
+    // Si esta hover o no
+    background-color: $bg-color;
+    color: $text-color;
+    border: 1px solid $text-color;
+  }  @else if ($encima == true and $enabled == true) {
+    background-color: $text-color;
+    color: $bg-color;
+    border: 1px solid $text-color;
+  }
+
+  @if ($enabled == false) {
+    // Si esta enabled o no
+    background-color: lighten($text-color, 70);
+    border: 1px solid lighten($text-color, 30);
+    color: $text-color;
+  }
+}
+
+@mixin buttons($nombre-texto, $nombre-fondo, $text-color, $bg-color) {
+  // Crea todos los estados del boton de golpe
+  // $nombre-texto: el nombre que tendra el CSS para el texto
+  // $nombre-fondo: el nombre que tendra el CSS para el fondo
+  // $text-color: color del texto
+  // $bg-color: color de fondo
+  button.#{$nombre-texto}_#{$nombre-fondo} {
+    @include button($text-color, $bg-color, false, true);
+  }
+
+  button.#{$nombre-texto}_#{$nombre-fondo}:hover {
+    @include button($text-color, $bg-color, true, true);
+  }
+
+  button.#{$nombre-texto}_#{$nombre-fondo}.active {
+    @include button($text-color, $bg-color, true, true);
+  }
+  button.#{$nombre-texto}_#{$nombre-fondo}.disabled {
+    @include button($text-color, $bg-color, false, false);
+  }
+}

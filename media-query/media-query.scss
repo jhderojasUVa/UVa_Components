@@ -1,0 +1,49 @@
+//
+//  Definición de pantallas
+//  y media query
+//  v0.1
+//
+
+// Tamaños
+
+$xs: 320px;
+$sm: 480px;
+$md: 1000px;
+$lg: 1280px;
+$xlg: 1800px;
+
+// Querys
+
+$tamanyo-device: max-device-width;
+$tamanyo-maximo: max-width;
+$tamanyo-minimo: min-width;
+
+// Respuestas
+
+@mixin query_tamanyo($medio) {
+  // Crea el query de tamaño segun
+  // movil = tamaño movil
+  // ordenador = tamaño tablet
+  // ordenador = tamaño ordenador
+  // tv = tamaño tv o mas
+  // hdtv = tamaño de 4K arriba
+  //
+  // Modo de uso
+  //
+  // p {
+  // color: red;
+  // @include query_tamanyo(movil) { color: white; }
+  // @include query_tamanyo(tablet) { color: black; }
+  // }
+  @if $media == movil {
+    @media only screen and ($tamanyo_maximo: $xs) { @content; }
+  } @else if $media == tablet {
+    @media only screen and ($tamanyo-minimo: $xs + 1) and ($tamanyo_maximo: $sm - 1) { @content; }
+  } @else if $media == ordenador {
+    @media only screen and ($tamanyo-minimo: $sm + 1) and ($tamanyo_maximo: $md - 1) { @content; }
+  } @else if $media == tv {
+    @media only screen and ($tamanyo-minimo: $md + 1) and ($tamanyo_maximo: $lg - 1) { @content; }
+  } @else if $media == hdtv {
+    @media only screen and ($tamanyo-minimo: $xlg) { @content; }
+  }
+}

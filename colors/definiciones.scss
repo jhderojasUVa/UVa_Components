@@ -1,0 +1,227 @@
+// Definicion de colores
+$blanco: white;
+$negro: black;
+
+$gris: #d2d2d2;
+
+$marron: #7b5548;
+$marron_oscuro: #5f4037;
+
+$rojo: #ef2862;
+$rojo_oscuro: #c7215a;
+
+$azul: #00bdd4;
+$azul_oscuro: #0098a7;
+
+$lima: #ced841;
+$lima_oscuro: #b0b032;
+
+$naranja: #ffbd1a;
+$naranja_oscuro: #ff9d10;
+
+$morado: #6746b6;
+$morado_oscuro: #503aa7;
+
+$azul2: #009cf2;
+$azul2_oscuro: #007cd1;
+
+$azul_gay: #ddeaed;
+$azul_gay_oscuro: #8cccd2;
+
+// Tamaños
+$enano: 5px;
+$pequeño: 10px;
+$mediano: 20px;
+$grande: 40px;
+
+// Limpieza estandar
+.clear {
+	clear: both;
+}
+// Extras Bootstrap
+.container-fluid.full-width {
+	padding-left: 0;
+	padding-right: 0;
+	overflow-x: hidden;
+}
+.row.row-no-gutter {
+	margin: 0
+}
+.row.row-no-gutter [class*="col-"] {
+	padding: 0
+}
+.img-full-width {
+	width: 100.5%;
+	height: auto;
+}
+.has-inner .row.row-no-gutter {
+	margin-left: -10px;
+	margin-right: -10px;
+}
+.row.row-no-gutter .inner {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+// Parche bootstrap que no falte
+.org-opencms-gwt-client-ui-css-I_CmsDirectEditCss-optionBar {
+	position: relative;
+	right: 0 !important;
+}
+
+// Footer
+.footer {
+	margin-top: $grande;
+	padding: $mediano;
+	border-top: 5px solid $azul;
+	font: 0.9em Arial;
+	h3 .texto {
+		border-bottom: 1px solid $gris;
+	}
+	.grupo_footer {
+		margin: 0 $pequeño;
+	}
+	a {
+		color: $azul;
+	}
+}
+// Colores de los textos
+// Ahora sobran con la nueva definicion de colores y bordes y mierdas varias
+/*
+.texto_marron {
+	color: $azul;
+}
+
+.texto_marron_oscuro {
+	color: $azul_oscuro;
+}
+
+.texto_azul {
+	color: $azul;
+}
+
+.texto_azul_oscuro {
+	color: $azul_oscuro;
+}
+
+.texto_azul2 {
+	color: $azul2;
+}
+
+.texto_azul2_oscuro {
+	color: $azul2_oscuro;
+}
+
+.texto_azul_gay {
+	color: $azul_gay;
+}
+
+.texto_azul_gay_oscuro {
+	color: $azul_gay_oscuro;
+}
+
+.texto_rojo {
+	color: $rojo;
+}
+
+.texto_rojo_oscuro {
+	color: $rojo_oscuro
+}
+
+.texto_lima {
+	color: $lima;
+}
+
+.texto_lima_oscuro {
+	color: $lima_oscuro;
+}
+
+.texto_naranja {
+	color: $naranja;
+}
+
+.texto_naranja_oscuro {
+	color: $naranja_oscuro;
+}
+
+.texto_morado {
+	color: $morado;
+}
+
+.texto_morado_oscuro {
+	color: $morado_oscuro;
+}
+
+// Separaciones forzadas
+.separacion_arriba_enana {
+	padding-top: $enano;
+}
+
+.separacion_arriba_peq {
+	padding-top: $pequeño;
+}
+
+// Colores de los bordes
+.borde_marron {
+	border-color: $marron;
+}
+
+.borde_marron_oscuro {
+	border-color: $marron_oscuro;
+}
+
+.borde_azul {
+	border-color: $azul;
+}
+
+.borde_azul_oscuro {
+	border-color: $azul;
+}
+
+.borde_azul2 {
+	border-color: $azul2;
+}
+
+.borde_azul2_oscuro {
+	border-color: $azul2_oscuro;
+}
+
+.borde_azul_gay {
+	border-color: $azul_gay;
+}
+
+.borde_azul_gay_oscuro {
+	border-color: $azul_gay_oscuro;
+}
+
+.borde_rojo {
+	border-color: $rojo;
+}
+
+.borde_rojo_oscuro {
+	border-color: $rojo_oscuro;
+}
+
+.borde_lima {
+	border-color: $lima;
+}
+
+.borde_lima_oscuro {
+	border-color: $lima_oscuro;
+}
+
+.borde_naranja {
+	border-color: $naranja;
+}
+
+.borde_naranja_oscuro {
+	border-color: $naranja_oscuro;
+}
+
+.borde_morado {
+	border-color: $morado;
+}
+
+.borde_morado_oscuro {
+	border-color: $morado_oscuro;
+}
+*/

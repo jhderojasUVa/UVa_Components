@@ -1,0 +1,60 @@
+//
+//  Definición de jumbotron
+//
+//  v0.1
+//
+
+@mixin jumbotron_element($text-name, $bg-name, $text-color, $bg-color, $borde: true) {
+  // Crea el elemento jumbotron con los dos colores principales y todo lo necesario
+  // $text-name: nombre del color de texto
+  // $bg-name: nombre del color de fondo
+  // $text-color: color en si del texto
+  // $bg-color: color del fondo
+  // $borde: con margin o sin margin (true/false)
+  background-color: $bg-color;
+  height: 212px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  @if $borde == true {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  margin-top: 0.5em;
+  text-align: center;
+  h1 {
+    text-align: center;
+    color: $text-color;
+    padding: 1.5em 0;
+    font-size: 1.6em;
+  }
+  button {
+    text-transform: uppercase;
+    text-align: center;
+    background-color: white;
+    border: none;
+    padding: 0.5em 1.5em;
+    color: darken($bg-color, 30%);
+    border-radius: 4px;
+    font-weight: bold;
+  }
+}
+
+@mixin create_jumbotron($text-name, $bg-name, $text-color, $bg-color, $borde: true) {
+  // Crea el jumbotron con los dos colores principales y todo lo necesario
+  // $text-name: nombre del color de texto
+  // $bg-name: nombre del color de fondo
+  // $text-color: color en si del texto
+  // $bg-color: color del fondo
+  @if $borde == true {
+    $nombre_borde: 'si';
+    .jumbotron_#{$text-name}_#{$bg-name}_si {
+      @include jumbotron_element($text-name, $bg-name, $text-color, $bg-color, true);
+    }
+  } @else {
+    $nombre_borde: 'no';
+    .jumbotron_#{$text-name}_#{$bg-name}_no {
+      @include jumbotron_element($text-name, $bg-name, $text-color, $bg-color, false);
+    }
+  }
+}
