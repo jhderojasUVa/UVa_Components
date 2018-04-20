@@ -34,7 +34,7 @@ We have two files depending of the component.
 scss/\_tabs.scss (normal style)
 scss/tabs_horizontal (horizontal tabs)
 ```
-## Javascript
+## Javascript (working in progress)
 
 This component is made on ES2016 who have the querySelectorAll method (the most used in JQuery).
 
@@ -43,3 +43,5 @@ For touching purpouses (now) we must create variables to know where the "touch" 
 All it's made in one unique function called Create_Events_Tab who need the id of the tab element and have two parts. On the first we change the "active" that helps to know what are you looking (and put the necessary CSS), on the second create the addEventListener to the element and how it works when fire the event.
 
 It's necesary to initialice the function with the id.
+
+This component is working progress so the definition of the JS it will be change day by day. The better way it's to see the function.
