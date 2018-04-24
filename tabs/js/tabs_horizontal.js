@@ -6,11 +6,15 @@ var touchStartY = 0;
 var touchEndX = 0;
 var touchEndY = 0;
 
+/*
+/* DEPRECIATED
+/*
+
 var screen_width = document.documentElement.clientWidth;
 // Cambia tabs de forma
 window.addEventListener('resize', resizeTabs);
 window.addEventListener('load', resizeTabs);
-
+*/
 function Create_Events_Tab(id_element) {
   var screen_width = document.documentElement.clientWidth
   // Funcion para el funcionamiento de los tabs
@@ -19,41 +23,22 @@ function Create_Events_Tab(id_element) {
   for (var i = 0; i < tabs.length; i++) {
 
     tabs[i].addEventListener('click', function(event) {
-      if (screen_width >= 800 || screen_width < 400) {
-        // Cual tab hemos pulsado para añadir el active y eliminamos que funcione el enlace
-        var clickedTab = event.currentTarget;
-        clickedTab.classList.add('active');
-        event.preventDefault();
+      // Cual tab hemos pulsado para añadir el active y eliminamos que funcione el enlace
+      var clickedTab = event.currentTarget;
+      clickedTab.classList.add('active');
+      event.preventDefault();
 
-        // Buscamos todos los contenidos para hacer como antes
-        var mycontentPanes = document.querySelectorAll('.'+id_element+' .contenido div');
-        for (i = 0; i < mycontentPanes.length; i++) {
-          // Quitamos el active a todos, por si acaso
-          mycontentPanes[i].classList.remove('active');
-        }
-        // Sacamos a donde iba el tab que hemos pulsado para ponerle el active
-        var anchorReference = event.target;
-        var activePanedId = anchorReference.getAttribute('href');
-        var activePane = document.querySelector('.'+id_element+' '+activePanedId);
-        activePane.classList.add('active');
-      } else if(screen_width < 800 && screen_width >= 400) {
-        transformTab(id_element, 'xl', 'md');
-        // Listener para tablet
-        event.preventDefault();
-        // Escondemos todo el contenido
-        var mycontentPanes = document.querySelectorAll('.'+id_element+' .contenido div');
-        for (i = 0; i < mycontentPanes.length; i++) {
-          // Quitamos el active a todos, por si acaso
-          mycontentPanes[i].classList.remove('active');
-          mycontentPanes[i].classList.add('hide_element');
-        }
-        var anchorReference = event.target;
-        var activePanedId = anchorReference.getAttribute('href');
-        //var activePane = document.querySelector('.'+id_element+' '+activePanedId);
-
-        //moveElementInDOM('.'+id_element+' ul li a[href="'+activePanedId+'"]', '.'+id_element+' '+activePanedId);
-        TabShow(id_element, activePanedId);
+      // Buscamos todos los contenidos para hacer como antes
+      var mycontentPanes = document.querySelectorAll('.'+id_element+' .contenido div');
+      for (i = 0; i < mycontentPanes.length; i++) {
+        // Quitamos el active a todos, por si acaso
+        mycontentPanes[i].classList.remove('active');
       }
+      // Sacamos a donde iba el tab que hemos pulsado para ponerle el active
+      var anchorReference = event.target;
+      var activePanedId = anchorReference.getAttribute('href');
+      var activePane = document.querySelector('.'+id_element+' '+activePanedId);
+      activePane.classList.add('active');
     });
   }
 
@@ -82,6 +67,10 @@ function Create_Events_Tab(id_element) {
 
   }
 }
+
+/*
+/*  DEPRECIATED
+/*
 
 function resizeTabs() {
   var screen_width = document.documentElement.clientWidth;
@@ -173,6 +162,7 @@ function TabShow(id_element, tab) {
   activePane.classList.add('active');
   activePane.classList.add('show_element');
 }
+*/
 
 // Ejemplo de uso
 Create_Events_Tab('identificador123');
