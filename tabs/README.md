@@ -16,15 +16,13 @@ This work as a common element, with an horizontal menu on the upper with links t
 
 ### Tablet (medium)
 
-Here it works like a hamburger menu putting al the sections one over other and when you choose one it "opens" and showing the content.
-
-It's not the perfect behavior because we change the typical tab behavior and may can confuse the person who is using it. Maybe it's better to clone the "big" size.
+In a tablet this component will work like on the PC/TV size with an upper menu that changes the content area.
 
 ### Mobile (small)
 
 On a mobile it show very different. The menu will be on the upper side of the element and if the menu is bigger than the width size of the screen the elements will be outside but you can swipe the menu in order to find what you need.
 
-## UI behavior
+## UI - Element
 
 ## SCSS
 
@@ -43,5 +41,3 @@ For touching purpouses (now) we must create variables to know where the "touch" 
 All it's made in one unique function called Create_Events_Tab who need the id of the tab element and have two parts. On the first we change the "active" that helps to know what are you looking (and put the necessary CSS), on the second create the addEventListener to the element and how it works when fire the event.
 
 It's necesary to initialice the function with the id.
-
-This component is working progress so the definition of the JS it will be change day by day. The better way it's to see the function.
