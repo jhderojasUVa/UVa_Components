@@ -25,6 +25,8 @@ component_name/
     .... (images needed for the component -if needed-)
   psd/
     component_name.psd (PSD file with the UI of the component)
+  xu/
+    component_name_ux.pdf (PDF with the UX of the component)
   index.html (example of the component runing)
   readme.md (documentation of the component)
 js/
@@ -33,6 +35,34 @@ js/
 ## Example of the component
 
 On the index.html file is a running example of the component. This file can be related libraries like Bootstrap, Foundation or JQuery if needed in order to run the example so, all this "linked" libraries must be linked outside (CDN, Google Hosted Libraries...).
+
+## UX of the component
+
+Every component has included a directory called UX where is a PDF file where the UX of the component it's explained.
+
+It must have the different sizes and how the component works explained on it.
+
+The component can have different elements inside so there's a nomenclature in order to understand wich elements will show (or not) in the different sizes.
+
+Elements in uppercase are always necessary. Elements in lowercase are optionals.
+
+The name of the size will be on brackets.
+
+Optional elements can be added or removed from one size to another.
+
+Example:
+
+Component 12abc: Have two necessary elements (1 and 2) and three optional elements (a, b, c).
+
+12abc[PC]-bc[Tablet]+c[Movil]
+
+This means that the component have all the elements in the PC size but we remove the b and c element on the tablet version but (from the tablet version), we add the element c for the mobile version, so, finally, the component will be:
+
+PC: 12abc
+Tablet: 12a
+Mobile: 12ac
+
+We use a graceful downgrade and its a mix between responsive and adaptive!
 
 ## Components with _
 
