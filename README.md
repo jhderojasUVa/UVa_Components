@@ -58,8 +58,8 @@ Component 12abc: Have two necessary elements (1 and 2) and three optional elemen
 
 This means that the component have all the elements in the PC size but we remove the b and c element on the tablet version but (from the tablet version), we add the element c for the mobile version, so, finally, the component will be:
 
-PC: 12abc
-Tablet: 12a
+PC: 12abc<br/>
+Tablet: 12a<br/>
 Mobile: 12ac
 
 We use a graceful downgrade and its a mix between responsive and adaptive!
