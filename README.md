@@ -25,7 +25,7 @@ component_name/
     .... (images needed for the component -if needed-)
   psd/
     component_name.psd (PSD file with the UI of the component)
-  xu/
+  ux/
     component_name_ux.pdf (PDF with the UX of the component)
   index.html (example of the component runing)
   readme.md (documentation of the component)
