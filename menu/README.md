@@ -16,6 +16,13 @@ If there's a first navigation level that have more than three sub levels there's
 
 The better way it's to see the PDF file.
 
+Included on the files it's the navigation system where it's explained how the navigation between pages work.
+
+```
+ux/menu.pdf (menu element)
+ux/navegacion.pdf (navigation workflow)
+```
+
 ### PC/TV size (big)
 
 This work as commented before.
