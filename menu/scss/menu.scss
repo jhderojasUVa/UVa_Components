@@ -1,0 +1,21 @@
+// SCSS Menu
+
+@mixin create_menu() {
+  .menu_group {
+    float: left;
+    margin: 0 0.5em;
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+}
+
+.menu {
+  @include create_menu();
+}
