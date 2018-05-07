@@ -1,6 +1,9 @@
 // SCSS Menu
 
 .menu {
+  .titulos {
+    background-color: darken(white, 10%);
+  }
   .menu_group {
     float: left;
     margin: 0 0.5em;
@@ -20,6 +23,7 @@
       }
     }
   }
+
 }
 
 // Extras
