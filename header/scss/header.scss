@@ -1,0 +1,40 @@
+//
+//  Definición de cabecera UVa
+//
+//  v0.1
+//
+
+@import "../../colors/definiciones";
+@import "../../fonts/fonts";
+
+.cabecera_uva {
+  background-color: $azul3_oscuro;
+  color: white;
+  font-size: 1.1em;
+  h1 {
+    color: white;
+    font-size: 26px;
+  }
+  a {
+    color: white;
+    &:hover {
+      color: white;
+      text-decoration: none;
+    }
+  }
+  .separador_left {
+    border-left: 1px solid $gris;
+    padding-left: 0.5em;
+  }
+  .separador_right {
+    border-right: 1px solid $gris;
+    padding-right: 0.5em;
+  }
+  .text-menu {
+    font-size: 10px;
+    width: 80px;
+  }
+  .icon {
+
+  }
+}
