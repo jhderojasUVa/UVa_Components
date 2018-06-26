@@ -2,6 +2,8 @@
 
 A solution for the SPA applications for the University of Valladolid.
 
+And the second version (v2) because everything changes for one day to another.
+
 ## UX - Element behavior
 
 The element have different behavior depending the size of the screen. So the size matters on how to use this element.
@@ -23,13 +25,19 @@ ux/menu.pdf (menu element)
 ux/navegacion.pdf (navigation workflow)
 ```
 
+For the version 2 I don't have anything above only a PSD file.
+
 ### PC/TV size (big)
 
 This work as commented before.
 
+I supouse that v2 it's what I have.
+
 ### Tablet/Mobile (medium)
 
 It will show a typical hamburger menu.
+
+No version for version 2.
 
 ## UI - Element
 
@@ -39,7 +47,10 @@ The common file.
 
 ```
 scss/menu.scss (menu element)
+scss/menuv2.scss (menu element for the version 2)
 ```
 ## Javascript (working in progress)
 
 For now, the only JS required it's for the typical hamburger menu.
+
+At now, we don't know how version 2 works so, for now, no JS needed.
