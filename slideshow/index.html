@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Slideshow</title>
+    <!-- Bootstrap as base -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Font awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/slideshow.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" class="slideshow" id="slideshow">
+          <div class="slide">
+            <img src="http://via.placeholder.com/1350x450?text=slide+1" alt="1" class="img-fluid">
+          </div>
+          <div class="slide">
+            <img src="http://via.placeholder.com/1350x450?text=slide+2" alt="2" class="img-fluid">
+          </div>
+          <div class="slide">
+            <img src="http://via.placeholder.com/1350x450?text=slide+3" alt="3" class="img-fluid">
+          </div>
+          <div class="slide">
+            <img src="http://via.placeholder.com/1350x450?text=slide+4" alt="4" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./js/slideshow.js"></script>
+  <script>
+    // Slideshow options
+    var options = {
+      slideIndex: 0,
+      timming: 2000
+    }
+    showSlide('slideshow', options);
+  </script>
+</html>
