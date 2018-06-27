@@ -3,8 +3,16 @@
   overflow: hidden;
   text-align: center; }
   #slideshow .dots .dot {
-    margin: 0 0.5em; }
+    margin: 0 0.2em;
+    width: 25px;
+    height: 5px;
+    border: 1px solid black;
+    background-color: white;
+    display: inline-block; }
+    #slideshow .dots .dot:hover {
+      cursor: pointer; }
     #slideshow .dots .dot.active {
+      background-color: black;
       font-weight: bold; }
 
 /*# sourceMappingURL=slideshow.css.map */
