@@ -13,9 +13,9 @@
     <link rel="stylesheet" href="./css/slideshow.css" />
   </head>
   <body>
-    <div class="container">
+    <div class="container" id="slideshow">
       <div class="row">
-        <div class="col-md-12" class="slideshow" id="slideshow">
+        <div class="col-md-12" class="slideshow">
           <div class="slide">
             <img src="http://via.placeholder.com/1350x450?text=slide+1" alt="1" class="img-fluid">
           </div>
@@ -30,6 +30,14 @@
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-12 text-center dots">
+          <span class="dot" onClick="gotoSlide('slideshow', 1)">1</span>
+          <span class="dot" onClick="gotoSlide('slideshow', 2)">2</span>
+          <span class="dot" onClick="gotoSlide('slideshow', 3)">3</span>
+          <span class="dot" onClick="gotoSlide('slideshow', 4)">4</span>
+        </div>
+      </div>
     </div>
   </body>
   <script src="./js/slideshow.js"></script>
@@ -37,8 +45,10 @@
     // Slideshow options
     var options = {
       slideIndex: 0,
-      timming: 2000
+      timming: 2000,
+      automated: true
     }
+
     showSlide('slideshow', options);
   </script>
 </html>

@@ -2,5 +2,9 @@
   height: 450px;
   overflow: hidden;
   text-align: center; }
+  #slideshow .dots .dot {
+    margin: 0 0.5em; }
+    #slideshow .dots .dot.active {
+      font-weight: bold; }
 
 /*# sourceMappingURL=slideshow.css.map */

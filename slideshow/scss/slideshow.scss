@@ -7,4 +7,12 @@
   .myslide {
 
   }
+  .dots {
+    .dot {
+      margin: 0 0.5em;
+      &.active {
+        font-weight: bold;
+      }
+    }
+  }
 }

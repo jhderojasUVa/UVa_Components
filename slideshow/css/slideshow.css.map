@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAEA,UAAW;EACT,MAAM,EAAE,KAAK;EACb,QAAQ,EAAE,MAAM;EAChB,UAAU,EAAE,MAAM",
+"mappings": "AAEA,UAAW;EACT,MAAM,EAAE,KAAK;EACb,QAAQ,EAAE,MAAM;EAChB,UAAU,EAAE,MAAM;EAKhB,qBAAK;IACH,MAAM,EAAE,OAAO;IACf,4BAAS;MACP,WAAW,EAAE,IAAI",
 "sources": ["../scss/slideshow.scss"],
 "names": [],
 "file": "slideshow.css"
