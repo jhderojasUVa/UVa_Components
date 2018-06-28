@@ -51,9 +51,22 @@
       .card {
         border: none;
         background-color: #e5e5e5;
+        p {
+          display: none;
+        }
         h1 {
           font-size: 26px;
           margin: 30px 20px;
+        }
+        &:hover {
+          .card-body {
+            background-color: #e5e5e5;
+            position: relative;
+            top: -150px;
+            p {
+              display: block;
+            }
+          }
         }
       }
     }

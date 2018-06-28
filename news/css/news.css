@@ -191,9 +191,17 @@ h2 p {
   .noticias .bloque_noticias .noticia_imagen .card {
     border: none;
     background-color: #e5e5e5; }
+    .noticias .bloque_noticias .noticia_imagen .card p {
+      display: none; }
     .noticias .bloque_noticias .noticia_imagen .card h1 {
       font-size: 26px;
       margin: 30px 20px; }
+    .noticias .bloque_noticias .noticia_imagen .card:hover .card-body {
+      background-color: #e5e5e5;
+      position: relative;
+      top: -150px; }
+      .noticias .bloque_noticias .noticia_imagen .card:hover .card-body p {
+        display: block; }
   .noticias .bloque_noticias .noticia_bloque {
     position: relative;
     border-radius: 4px;
