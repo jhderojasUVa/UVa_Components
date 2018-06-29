@@ -51,12 +51,14 @@
       .card {
         border: none;
         background-color: #e5e5e5;
+        height: 290px;
+        overflow: hidden;
         p {
           display: none;
           font-size: 12px;
-          visibility: hidden;
-          opacity: 0;
-          transition: visibility 0.2s, opacity 0.5s linear;
+        }
+        .card-body {
+          transition: transform 0.2s linear;
         }
         h1 {
           font-size: 26px;
@@ -65,12 +67,11 @@
         &:hover {
           .card-body {
             background-color: #e5e5e5;
-            position: absolute;
-            top: 50px;
+            /*position: absolute;
+            top: 50px;*/
+            transform: translate(0, -150px);
             p {
               display: block;
-              opacity: 1;
-              visibility: visible;
             }
           }
         }
