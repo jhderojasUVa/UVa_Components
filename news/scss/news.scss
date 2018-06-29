@@ -53,6 +53,10 @@
         background-color: #e5e5e5;
         p {
           display: none;
+          font-size: 12px;
+          visibility: hidden;
+          opacity: 0;
+          transition: visibility 0.2s, opacity 0.5s linear;
         }
         h1 {
           font-size: 26px;
@@ -61,10 +65,12 @@
         &:hover {
           .card-body {
             background-color: #e5e5e5;
-            position: relative;
-            top: -150px;
+            position: absolute;
+            top: 50px;
             p {
               display: block;
+              opacity: 1;
+              visibility: visible;
             }
           }
         }
