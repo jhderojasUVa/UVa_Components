@@ -1,0 +1,15 @@
+// Contact
+
+@import "../../colors/_colors";
+@import "../../fonts/fonts";
+
+$amarillo: #fddf73;
+
+.contacto {
+  border-radius: 4px;
+  background-color: $amarillo;
+
+  .btn {
+    text-transform: uppercase;
+  }
+}
