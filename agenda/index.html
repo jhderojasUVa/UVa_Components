@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Agenda</title>
+    <!-- Bootstrap as base -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>-->
+    <!-- Font awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/agenda.css" />
+  </head>
+  <body>
+    <div class="container" id="agenda" style="margin-top: 20px;">
+      <div class="row">
+        <div class="col-12 col-md-2 header">
+          <h1>agenda</h1>
+        </div>
+        <div class="col bloque_raya">
+          <span class="masinformacion"><a href="#" role="link">más información <i class="fas fa-angle-right"></i></a></span>
+        </div>
+      </div>
+
+      <div class="row" class="bloque_agenda" style="margin-top:15px;">
+
+        <div class="col-4 col-md-4 slide">
+          <div class="va">
+            <h1>17 <small>junio</small></h1>
+            <p>Jornadas de noseque y tal</p>
+          </div>
+        </div>
+
+        <div class="col-4 col-md-4 slide">
+          <div class="pa">
+            <h1>19 <small>junio</small></h1>
+            <p>Jornadas de noseque y tal y pascual</p>
+          </div>
+        </div>
+
+        <div class="col-4 col-md-4 slide">
+          <div class="so">
+            <h1>14 <small>julio</small></h1>
+            <p>Que la realidad no te joda</p>
+          </div>
+        </div>
+
+        <div class="col-4 col-md-4 slide">
+          <div class="se">
+            <h1>14 <small>julio</small></h1>
+            <p>Un buen diseño</p>
+          </div>
+        </div>
+
+        <div class="col-4 col-md-4 slide">
+          <div class="uva_azul">
+            <h1>22 <small>julio</small></h1>
+            <p>Jornadas de noseque y tal con menestra</p>
+          </div>
+        </div>
+
+        <div class="col-4 col-md-4 slide">
+          <div class="uva_rosa">
+            <h1>31 <small>julio</small></h1>
+            <p>Calabazas y jornadas de noseque y tal</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 text-center dots">
+          <span class="dot" onClick="gotoSlide('agenda', 1)"></span>
+          <span class="dot" onClick="gotoSlide('agenda', 2)"></span>
+          <span class="dot" onClick="gotoSlide('agenda', 3)"></span>
+          <span class="dot" onClick="gotoSlide('agenda', 4)"></span>
+          <span class="dot" onClick="gotoSlide('agenda', 5)"></span>
+          <span class="dot" onClick="gotoSlide('agenda', 6)"></span>
+        </div>
+      </div>
+
+    </div>
+    <script src="./js/slideshow.js"></script>
+    <script>
+      // Slideshow options
+      var options = {
+        slideIndex: 0,
+        timming: 2000,
+        automated: true,
+        num_show: 3
+      }
+
+      showSlide('agenda', options);
+    </script>
+  </body>
+</html>
