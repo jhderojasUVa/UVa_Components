@@ -1,0 +1,70 @@
+// Vive la UVa SCSS
+
+@import "../../colors/_colors";
+@import "../../fonts/_fonts";
+
+$amarillo: #ffe29a;
+$naranja: #ffa87d;
+$verde: #00dbc5;
+$azul: #00cafd;
+
+@include create_background('amarillo', $amarillo);
+@include create_background('naranja', $naranja);
+@include create_background('verde', $verde);
+@include create_background('azul', $azul);
+
+
+.vivelauva {
+
+  .header {
+    border-bottom: 1px solid $negro;
+    margin-right: 15px;
+    h1 {
+      font-size: 26px;
+      //padding-left: 12px;
+      padding-right: 20px;
+      padding-bottom: 7px;
+      text-transform: uppercase;
+      margin-right: 15px;
+    }
+  }
+  .bloque_raya {
+    margin-left: 0;
+    padding-left: 0;
+    border-bottom: 1px solid $negro;
+    .masinformacion {
+      font-size: 10px;
+      padding: 18px 20px;
+      border: 1px solid $negro;
+      text-transform: uppercase;
+      a {
+        color: $negro;
+        &:hover {
+          color: $negro;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .card {
+    h1.card-title {
+      text-transform: uppercase;
+      font-size: 20px;
+      margin-top: -1px;
+      margin-bottom: 5px;
+      padding-top: 20px;
+      padding-bottom: 5px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .card-body {
+      padding: 0px 10px;
+    }
+    .card-date {
+      font-size: 12px;
+      text-align: right;
+      line-height: 1;
+    }
+  }
+}
