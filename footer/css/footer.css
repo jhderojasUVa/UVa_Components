@@ -189,7 +189,10 @@ footer {
         line-height: 1;
         font-size: 36px; }
       footer .enlaces .pie_enlaces form input[type="text"] {
-        width: 100%; }
+        width: 100%;
+        border: 1px solid #121212; }
+      footer .enlaces .pie_enlaces form button {
+        text-transform: uppercase; }
   footer .politica {
     background-color: #2c2c2c;
     text-align: center;
