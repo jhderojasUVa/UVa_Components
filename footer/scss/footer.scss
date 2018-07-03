@@ -43,6 +43,10 @@ footer {
       form {
         input[type="text"] {
           width: 100%;
+          border: 1px solid $negro;
+        }
+        button {
+          text-transform: uppercase;
         }
       }
     }
