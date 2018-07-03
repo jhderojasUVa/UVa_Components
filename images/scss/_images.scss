@@ -4,8 +4,14 @@
 //  v0.1
 //
 
-@mixin image_element() {
+@mixin image_element($text-color) {
   // Crea un elemento imagen con sus caracteristicas
+  // $text-color: color del texto
+  .image {
+    a:hover {
+      color: $text-color;
+    }
+  }
 }
 
 @mixin images() {

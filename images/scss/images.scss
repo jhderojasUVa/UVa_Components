@@ -1,0 +1,8 @@
+// Images SCSS
+
+.full-image {
+  // This will help if the image is lower than the size where is put
+  display: block;
+  width: 100vw;
+  object-fit: cover;
+}
