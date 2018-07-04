@@ -1,4 +1,4 @@
-// Slideshow on pure JS
+/ Slideshow on pure JS
 
 var timer;
 
@@ -25,6 +25,7 @@ function showSlide(nameOfSlideshow, options) {
   var slides = document.getElementById(nameOfSlideshow).getElementsByClassName('slide');
   var dots = document.getElementById(nameOfSlideshow).getElementsByClassName('dot');
 
+
   // Clearing all the elements
   for (let i = 0; i < slides.length; i++) {
     // Hidding all the slides
@@ -40,7 +41,7 @@ function showSlide(nameOfSlideshow, options) {
   for (let i = 0; i < num_show; i++) {
     // Testing if there's more "i" than slides we have
     if ((slideIndex + i) >= slides.length) {
-      slideIndex = 0;
+      slideIndex = slides.length-i-1;
     }
     slides[slideIndex + i].style.display = 'inline-block';
 
@@ -50,9 +51,13 @@ function showSlide(nameOfSlideshow, options) {
     }
   }
 
+  if (slideIndex +num_show>= slides.length) {
+    slideIndex =0-num_show;
+  }
+
   // New options!
   options = {
-    slideIndex: slideIndex + num_show,
+    slideIndex: slideIndex+num_show,
     timming: timming,
     automated: true,
     num_show: num_show
