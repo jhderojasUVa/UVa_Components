@@ -1,27 +1,12 @@
-agefunction eventos_jsonp(url) {
-  return new Promise(function(resolve, reject) {
-      let script = document.createElement('script')
-      const name = "_jsonp_" + Math.round(100000 * Math.random());
-      //url formatting
-      if (url.match(/\?/)) url += "&callback="+name
-      else url += "?callback="+name
-      script.src = url;
-      window[name] = function(data) {
-          resolve(data);
-          document.body.removeChild(script);
-          delete window[name];
-      }
-      document.body.appendChild(script);
-  });
-}
-
 class EventoTexto extends HTMLElement {
+
   static get is() {
     return 'evento-texto';
   }
+
   constructor(self) {
     self = super(self);
-    self._elem=undefined;
+    self._elem = undefined;
     let shadowRoot = self.attachShadow({ mode: 'open' });
     self.setAttribute('class','col-12 col-xs-12 col-sm-12 col-md-4  slide');
     return self;
@@ -52,37 +37,13 @@ class EventoTexto extends HTMLElement {
       var locale = "es-Es";
       let html='';
 	  html+=`
-      <style>
-      .header {
-        border-bottom: 1px solid #121212;
-        margin-right: 15px;
-      }
-      .header h1 {
-          font-size: 26px;
-          padding-right: 20px;
-          padding-bottom: 7px;
-          text-transform: uppercase;
-          margin-right: 15px;
-      }
-      .agenda .bloque_raya, #agenda .bloque_raya {
-        margin-left: 0;
-        padding-left: 0;
-        border-bottom: 1px solid #121212; }
-        .agenda .bloque_raya .masinformacion, #agenda .bloque_raya .masinformacion {
-          font-size: 10px;
-          padding: 18px 20px;
-          border: 1px solid #121212;
-          text-transform: uppercase; }
-          .agenda .bloque_raya .masinformacion a, #agenda .bloque_raya .masinformacion a {
-            color: #121212; }
-            .agenda .bloque_raya .masinformacion a:hover, #agenda .bloque_raya .masinformacion a:hover {
-              color: #121212;
-              text-decoration: none; }
+      <style>/*
       .agenda #agenda .bloque_agenda, #agenda #agenda .bloque_agenda {
         height: 100px;
         overflow: hidden; }
+		*/
       .va{
-        padding: 0.5em;
+        padding: 0.5em 1em;
         border-radius: 4px;
         background-color: #5534ae;
       }
@@ -90,12 +51,12 @@ class EventoTexto extends HTMLElement {
         color: white !important;
       }
       .se {
-        padding: 0.5em;
+        padding: 0.5em 1em;
         border-radius: 4px;
         background-color: #ff9000;
       }
       .pa {
-        padding: 0.5em;
+        padding: 0.5em 1em;
         border-radius: 4px;
         background-color: #93198f;
       }
@@ -103,7 +64,7 @@ class EventoTexto extends HTMLElement {
         color: white !important;
       }
       .so {
-        padding: 0.5em;
+        padding: 0.5em 1em;
         border-radius: 4px;
         background-color: #aad000;
       }
@@ -120,7 +81,61 @@ class EventoTexto extends HTMLElement {
         border-radius: 4px;
         background-color: #ff8b92;
       }
+	  .va h1, .pa h1, .se h1, .so h1 {
+	  	font-family: "Lato", Arial;
+		font-size: 4.5rem;
+		font-weight: 400;
+		margin: 0;
+		padding: 0;
+		padding-right: 28px;
+		margin-right: 15px;
+		margin-top: -20px;
+		margin-bottom: -15px;
+	  }
+	  .va p, .pa p, .se p, .so p {
+	  	margin: 0;
+		font-size: 0.8em;
+		height: 90px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	  }
+	  @media only screen and (max-width: 992px) {
+	  	.va h1, .pa h1, .se h1, .so h1 {
+		font-size: 2.5rem;
+		margin-top: 0.05rem;
+		margin-top: -15px;
+		margin-bottom: -10px;
+		}
+
+		va p, .pa p, .se p, .so p {
+	  		font-size: 1em;
+			line-height: 0.5;
+	  	}
+	  }
+
+	  @media only screen and (max-width: 767px) {
+	  	.va h1, .pa h1, .se h1, .so h1 {
+			font-family: "Lato", Arial;
+			font-size: 4.5rem;
+			font-weight: 400;
+			margin: 0;
+			padding: 0;
+			padding-right: 28px;
+			margin-right: 15px;
+			margin-top: -20px;
+			margin-bottom: -15px;
+		  }
+		  .va p, .pa p, .se p, .so p {
+			margin: 0;
+			font-size: 0.8em;
+			height: 90px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		  }
+
+	  }
       </style>`;
+
       let clase='uva_rosa';
       if (val.campus_id != 0) {
         switch (val.campus_id) {
@@ -144,9 +159,10 @@ class EventoTexto extends HTMLElement {
           clase='uva_rosa';
         }
       }
-        html+='  <div class="'+clase+'">';
+        html+='  <div class="'+clase+'" style="height: 135px; margin-bottom: 10px;">';
       if (val.title) {
-        html+='    <h1>'+date.getDate()+' <small>'+date.toLocaleString(locale, { month: "long" })+'</small></h1>';
+	  // style="font-size: 3em; padding-right: 28px; margin: 0; margin-right: 15px;"
+        html+='    <h1>'+date.getDate()+' <small style="font-size: 0.3em; font-weight: normal; text-transform: capitalize;">'+date.toLocaleString(locale, { month: "long" })+'</small></h1>';
       }
       if (val.title) {
         html+='    <p>'+val.title+' '+val.id+'</p>';
@@ -156,7 +172,7 @@ class EventoTexto extends HTMLElement {
     } else {
       this.removeAttribute('open');
     }
-    this._elem=val;
+    this._elem = val;
   }
 
 
@@ -170,6 +186,8 @@ class EventoTexto extends HTMLElement {
       window.open(url, "_blank");
     }
   }
+
+
 }
 customElements.define(EventoTexto.is, EventoTexto);
 
@@ -181,14 +199,22 @@ class EventoSpan extends HTMLElement {
 
   constructor() {
     super();
-    this.indice=0;
+	//var indice;
+	//this.indice = indice;
+	// El valor como lo carga al montar, no lo vamos a poner a 0 cuando contruimos el objeto que la cagamos
+	// Vamos que teneoms que crear la propiedad del objeto tras crearle y asignarselo luego para que
+	// en el primer montaje le meta el valor correcto
+    //this.indice = 0;
     //this.createShadowRoot();
     let shadowRoot = this.attachShadow({ mode: 'open' });
-    this.setAttribute('class','dot');
+
   }
 
   connectedCallback() {
     this.addEventListener('click', this.onclick);
+	this.setAttribute('class','dot');
+	this.setAttribute('indice', this.indice);
+
   }
 
   disconnectedCallback() {
@@ -201,47 +227,100 @@ class EventoSpan extends HTMLElement {
   attributeChangedCallback(name, oldValue, newValue) {
   }
 
+	// Como se lo cascamos desde fuera, el set y el get sooooooobran
+	/*
   set indice(val) {
+  	console.log('Val = '+ val);
+	indice = val;
+	console.log('indice = '+val);
+	if (val) {
+		console.log('Hay val');
+		console.log('Indice indice : '+indice);
+		this.micaca = val;
+		//this.indice = val;
+	} else {
+		console.log('NO Hay val');
+		//this.indice = 0;
+	}
+    //this.indice = val;
   }
 
   get indice() {
-    return this.indice;
+  	console.log('fffffff');
+    //return this.indice;
   }
+	*/
 
   onclick(event)  {
-    if (event.target === this) {
+  	// El click
+  	event.preventDefault();
+	agendaoptions.slideIndex = this.indice;
+	agendaoptions.automated = false;
+	showSlide("agenda", agendaoptions);
+
+	// Esto sobra pero te lo dejo porque asi yoquese y tal
+	// Vamos que te quito esta morralla
+    /*if (event.target === this) {
       event.stopImmediatePropagation();
       event.preventDefault();
-      agendaoptions.slideIndex=this.indice;
-      agendaoptions.automated=false;
-      showSlide("agenda",agendaoptions);
-    }
+      agendaoptions.slideIndex = this.indice;
+	  console.log(this.indice);
+      agendaoptions.automated = false;
+	  agendaoptions.timing = 12000;
+      showSlide("agenda", agendaoptions);
+    }*/
   }
 }
 //customElements.define(EventoSpan.is, EventoSpan,{ extends: 'span' });
 customElements.define(EventoSpan.is, EventoSpan);
 
+function eventos_jsonp(url) {
+  // Funcion que inserta el JSON de una URL para el callback
+  return new Promise(function(resolve, reject) {
+      let script = document.createElement('script')
+      const name = "_jsonp_" + Math.round(100000 * Math.random());
+      //url formatting
+      if (url.match(/\?/)) url += "&callback="+name
+      else url += "?callback="+name
+      script.src = url;
+      window[name] = function(data) {
+          resolve(data);
+          document.body.removeChild(script);
+          delete window[name];
+      }
+      document.body.appendChild(script);
+  });
+}
+
 document.addEventListener("DOMContentLoaded",function(){
   //index=Solr%20Offline
-  var data = eventos_jsonp("http://ediciond.uva.es:8080/system/modules/es.uva.web.portal.enterprise/elements/eventos/eventos_proxy.jsp?dataType=jsonp");
+  var data = eventos_jsonp("http://ediciond.uva.es/system/modules/es.uva.web.portal.enterprise/elements/eventos/eventos_proxy.jsp?dataType=jsonp");
   data.then((res) => {
     let contador=0;
     if (res.events && res.total_found>0) {
         res.events.forEach(doc => {
           let evento = new EventoTexto();
-          evento.elem=doc;
+          evento.elem = doc;
           document.getElementById('eventos_agenda').appendChild(evento);
 
-          let eventodot= new EventoSpan();
-          eventodot.indice=contador;
+          let eventodot = new EventoSpan();
+		  // Asi no, hay que crearla en el objeto a las malas
+          //eventodot.indice = contador;
+		  // Asi si porque sino, no recibe bien la cantidad (el contador)
+		  // asi al crear la propiedad le insertamos ya el valor en ella
+		  Object.defineProperty(eventodot, 'indice', {
+		  	enumerable: true,
+			writable: true,
+			value: contador
+		  });
           document.getElementById('eventos_dots').appendChild(eventodot);
           contador++;
         });
       } else {
+	  	// Mostramos chicharra
+	  	throw new Error('Error al crear la agenda');
       }
 
       showSlide('agenda', agendaoptions);
     });
-
-
 });
