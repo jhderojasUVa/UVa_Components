@@ -11,6 +11,16 @@
   background-color: $azul3_oscuro;
   color: white;
   font-size: 1.1em;
+  // Generic size
+  .row {
+    height: 52px;
+  }
+  @media only screen and (max-width: 769px) {
+    // Small sizes
+    .row {
+      height: 88px;
+    }
+  }
   h1 {
     color: white;
     font-size: 26px;
@@ -37,4 +47,11 @@
   .icon {
 
   }
+}
+
+.langSelect {
+  background: none;
+    color: white;
+    font-size: 10px;
+	margin-left: 5px;
 }
