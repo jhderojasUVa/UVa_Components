@@ -9,6 +9,7 @@ $violeta: #93198f;
 $verde: #aad000;
 $azul_uva: #0e3675;
 $rosa: #ff8b92;
+$negro_uva: #121212;
 
 // Crea los colores de los sitios para la agenda
 @mixin crea_sitio_agenda($nombre, $color-fondo, $invertir) {
@@ -28,27 +29,43 @@ $rosa: #ff8b92;
 }
 
 .agenda, #agenda {
+  // Pantalla LG o Generico
   .header {
-    border-bottom: 1px solid $negro;
+    border-bottom: 1px solid $negro_uva;
     margin-right: 15px;
     h1 {
       font-size: 26px;
-      //padding-left: 12px;
       padding-right: 20px;
       padding-bottom: 7px;
       text-transform: uppercase;
       margin-right: 15px;
     }
   }
+  // Pantalla MD
+  @media only screen and (max-width: 999px) {
+    .header {
+      font-size: 22px;
+      margin-right: 5px;
+    }
+  }
+  // Pantalla LG o Generico
   .bloque_raya {
     margin-left: 0;
     padding-left: 0;
-    border-bottom: 1px solid $negro;
+    border-bottom: 1px solid $negro_uva;
     .masinformacion {
       font-size: 10px;
-      padding: 18px 20px;
-      border: 1px solid $negro;
+      padding: 19px 20px;
+      border: 1px solid $negro_uva;
       text-transform: uppercase;
+      transition: all 0.2s;
+      &:hover {
+        background-color: rgba(90, 240, 255, 0.6);
+        .flecha {
+          transform: translate(5px, 0px);
+          display: inline-block;
+        }
+      }
       a {
         color: $negro;
         &:hover {
@@ -56,15 +73,36 @@ $rosa: #ff8b92;
           text-decoration: none;
         }
       }
+      .flecha {
+        transition: all 0.5s;
+      }
+    }
+    // Pantalla MD
+    @media only screen and (max-width: 999px) {
+      .masinformacion {
+        padding: 13px 20px;
+          a {
+            color: $negro_uva;
+            &:hover {
+              color: $negro_uva;
+              text-decoration: none;
+            }
+          }
+        }
+      }
     }
   }
 
-  #agenda {
+  #agenda, .agenda {
     .bloque_agenda {
       height: 100px;
       overflow: hidden;
       .slide {
         // Size and whatever made thanks bootstrap
+        height: 250px;
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
   }
@@ -95,4 +133,3 @@ $rosa: #ff8b92;
       }
     }
   }
-}

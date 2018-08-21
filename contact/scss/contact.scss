@@ -11,5 +11,25 @@ $amarillo: #fddf73;
 
   .btn {
     text-transform: uppercase;
+    &.contacto {
+      background-color: white;
+    	border: 1px solid black;
+    	color: black;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+	      color: white;
+      }
+    }
+  }
+
+  h1 {
+    color: rgba(50, 50, 50, 0.9);
+  	font-size: 1.8rem;
+  	font-weight: 700;
+  	margin-top: 0.8em;
+  }
+
+  p {
+    font-size: 1em;
   }
 }
