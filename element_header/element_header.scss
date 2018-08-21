@@ -1,0 +1,75 @@
+// SCSS header element
+// Remember that after creating the "header" of the element, you must
+// take care of the element! :)
+
+$negro_uva: #121212;
+$negro: black;
+
+@mixin element_header($element-name) {
+  .#{$element-name} {
+    // Generic size
+    .header {
+      border-bottom: 1px solid $negro_uva;
+      margin-right: 15px;
+      h1 {
+        font-size: 26px;
+        padding-right: 20px;
+        padding-bottom: 7px;
+        text-transform: uppercase;
+        margin-right: 15px;
+      }
+    }
+    // MD or tablet size
+    @media only screen and (max-width: 999px) {
+      .header {
+        font-size: 22px;
+        margin-right: 5px;
+      }
+    }
+  }
+  // Generic size
+  .bloque_raya {
+    margin-left: 0;
+    padding-left: 0;
+    border-bottom: 1px solid $negro_uva;
+    .masinformacion {
+      font-size: 10px;
+      padding: 19px 20px;
+      border: 1px solid $negro_uva;
+      text-transform: uppercase;
+      // Background and generic transition
+      transition: all 0.2s;
+      &:hover {
+        background-color: rgba(90, 240, 255, 0.6);
+        .flecha {
+          transform: translate(5px, 0px);
+          display: inline-block;
+        }
+      }
+      a {
+        color: $negro;
+        &:hover {
+          color: $negro;
+          text-decoration: none;
+        }
+      }
+      .flecha {
+        // Moving the arrow, specific transition
+        transition: all 0.5s;
+      }
+    }
+    // Tablet or MD size
+    @media only screen and (max-width: 999px) {
+      .masinformacion {
+        padding: 13px 20px;
+          a {
+            color: $negro_uva;
+            &:hover {
+              color: $negro_uva;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+}
