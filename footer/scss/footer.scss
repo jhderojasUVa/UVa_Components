@@ -3,11 +3,13 @@
 @import "../../fonts/_fonts";
 @import "../../colors/_colors";
 
+$negro_uva: #121212;
+
 footer {
   color: white;
   .mapa {
-    border-top: 1px solid $negro;
-    border-bottom: 1px solid $negro;
+    border-top: 1px solid $negro_uva;
+    border-bottom: 1px solid $negro_uva;
     background-color: lighten($negro, 70);
     .gmap {
       margin: 0;
@@ -22,7 +24,8 @@ footer {
     }
     h1 {
       margin-top: 20px;
-      font-size: 18px;
+      font-size: 2em;
+      margin-bottom: 15px;
     }
     p {
       font-size: 11px;
@@ -33,6 +36,10 @@ footer {
       list-style-type: none;
       font-size: 11px;
     }
+    li {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
     .pie_enlaces {
       padding: 70px 0px;
       .lema {
@@ -42,11 +49,28 @@ footer {
       }
       form {
         input[type="text"] {
+          color: inherit;
+          font: inherit;
           width: 100%;
-          border: 1px solid $negro;
+          border: 1px solid $negro_uva;
+          padding: 0.3em;
         }
         button {
           text-transform: uppercase;
+          margin: 0;
+          padding: 0; // reset!
+    		  padding-left: 1em;
+    		  padding-right: 1em;
+    		  padding-top: 0.2em;
+    		  padding-bottom: 0.2em;
+    		  border-radius: 3px;
+    		  border: 1px solid $negro_uva;
+    		  margin-top: 2px;
+    		  font-weight: 600;
+          &:hover {
+            color: white;
+            background-color: $negro_uva;
+          }
         }
       }
     }
@@ -64,5 +88,9 @@ footer {
     p {
       font-size: 8px;
     }
+  }
+
+  .socialicon:hover {
+    color: #5af0ff !important;
   }
 }
